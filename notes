@@ -5,7 +5,7 @@
 # Output a variable or updating values without hard coding
 # using data function
 
-cont app = Vue.createApp({
+const app = Vue.createApp({
     #function to return a data object
     data() {
         return {
@@ -25,3 +25,71 @@ app.mount('#app')
     #syntax to display: {{ variable_name }}
     <p> {{ title }} </p>
 </div>
+
+#####################################################
+
+# Directive:
+# v-on -> react to different types of event
+# v -> view
+# on -> name of directive (onclick, onMouse, etc)
+#syntax: v-on:<typeOfEvent>
+
+<button v-on:click="age++">Increment Age by 1</button>
+
+# changing existing value of string 
+
+@click="variable_name" = 'new value'
+
+# The above changes/update the variables in the template
+
+-------------------------
+# Below changes value inside the component through methods
+
+# index.js
+
+const app = Vue.createApp({
+    #function to return a data object
+    data() {
+        return {
+            title: 'Your title here'
+        }
+    },
+    methods: {
+        changeTitle(){
+            this.title = 'New title'
+        }
+    }
+})
+
+# in index.html
+# syntax: @click="method_name"
+    
+@click="changeTitle"
+# -> upon click invokes the method
+
+-----------------------------------
+
+# the same with above but with passing an argument
+# index.js
+
+const app = Vue.createApp({
+    #function to return a data object
+    data() {
+        return {
+            title: 'Your title here'
+        }
+    },
+    methods: {
+        changeTitle(title){
+            this.title = title
+        }
+    }
+})
+
+# in index.html
+# syntax: @click="method_name"
+    
+@click="changeTitle('The New Title')"
+# -> upon click invokes the method
+
+------------------------------------

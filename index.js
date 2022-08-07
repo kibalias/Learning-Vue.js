@@ -1,6 +1,17 @@
 const app = Vue.createApp({
     // data, functions
-    template: '<h1>Learning Vue</h1>'
+    data(){
+        return{
+            text: 'Repository owner: JAN NICOLE CASILLAN',
+            info: 'I am doing nothing.',
+            count: 0
+        }
+    },
+    methods: {
+        changeInfo(info){
+            this.info = info
+        }
+    }
 })
 
 app.mount('#app')
