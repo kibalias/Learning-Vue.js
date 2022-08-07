@@ -1,0 +1,25 @@
+# index.js
+# ----------------
+# Output a variable or updating values without hard coding
+# using data function
+
+cont app = Vue.createApp({
+    #function to return a data object
+    data() {
+        return {
+            title: 'Your title here'
+        }
+    }
+})
+
+#Mount or display to the element
+app.mount('#app') 
+
+# index.html
+# ---------------
+# inside the template, value returned will be displayed
+
+<div id="app">
+    #syntax to display: {{ variable_name }}
+    <p> {{ title }} </p>
+</div>
